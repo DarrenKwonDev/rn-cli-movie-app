@@ -6,24 +6,23 @@
  * @flow strict-local
  */
 
-import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {Text, View, StyleSheet, Image} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import Stack from './navigations/Stack';
 import styled from 'styled-components';
+import Tabs from './navigations/Tabs';
 
-const Container = styled.View`
-  background-color: pink;
-  padding: 35px;
-  margin-top: 25px;
-`;
+function App() {
+  const [isLoading, setisLoading] = useState(false);
 
-const App: () => React$Node = () => {
   return (
     <>
-      <Container>
-        <Text>hellosss</Text>
-      </Container>
+      <NavigationContainer>
+        <Stack />
+      </NavigationContainer>
     </>
   );
-};
+}
 
 export default App;
